@@ -7,6 +7,97 @@
   src: local('../fonts/Roboto.ttf');
 }
 
-.App {
+@mixin shadow-border($color) {
+  box-shadow: 0 0 0 1px $color;
+}
+
+body {
+  background-color: material-color('deep-purple', '900');
+  color: white;
+}
+
+.game {
   font-family: Roboto, sans-serif;
+  padding: 0;
+
+  .field {
+    margin: 1em 0.5em;
+    padding: 1em;
+    width: unquote("calc(100vmin - 1em)");
+    height: unquote("calc(100vmin - 2em)");
+    display: flex;
+    background-color: material-color("indigo", "900");
+    border-radius: 1em;
+
+    .panel {
+      width: 50%;
+      height: 100%;
+      margin-left: 0.5em;
+
+      .buttons {
+        .btn {
+          width: 100%;
+          margin-bottom: 2.5%;
+          background-color: material-color("indigo");
+          border-color: material-color("indigo", "700");
+
+          &:hover {
+            background-color: material-color("indigo", "600");
+            border-color: material-color("indigo", "800");
+          }
+          &:focus {
+            background-color: material-color("indigo", "700");
+            border-color: material-color("indigo", "900");
+            box-shadow: 0 0 0 0.2rem material-color("indigo");
+          }
+        }
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .next-up {
+        width: 40%;
+        height: 15%;
+        margin: 10% auto;
+
+        .n-row {
+          width: 100%;
+          height: (100% / 3);
+          display: flex;
+
+          .tile {
+            width: 25%;
+            height: 100%;
+            @include shadow-border(material-color("blue"));
+          }
+        }
+      }
+    }
+
+    .grid {
+      width: 50%;
+      height: 100%;
+      margin-right: 0.5em;
+
+      .g-row {
+        display: flex;
+        width: 100%;
+        height: 5%;
+
+        .tile {
+          width: 10%;
+          height: 100%;
+          @include shadow-border(material-color("blue"));
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .game .field {
+    width: 33em;
+    height: 32em;
+  }
 }

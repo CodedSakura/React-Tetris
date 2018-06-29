@@ -2,6 +2,7 @@
   "name": "tetris",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/games/tetris/",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "node-sass-chokidar": "^1.3.0",

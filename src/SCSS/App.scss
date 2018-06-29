@@ -1,0 +1,12 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "libs/Iconic.scss";
+@import "libs/Colors.scss";
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('../fonts/Roboto.ttf');
+}
+
+.App {
+  font-family: Roboto, sans-serif;
+}
